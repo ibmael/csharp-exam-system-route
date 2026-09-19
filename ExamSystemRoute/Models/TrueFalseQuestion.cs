@@ -24,7 +24,7 @@ namespace ExamSystem.Models
 
         public override string ToString()
         {
-            return $"{base.ToString()}\n1. True\n2. False";
+            return $"{base.ToString()}\nChoose one answer:";
         }
 
         #endregion
