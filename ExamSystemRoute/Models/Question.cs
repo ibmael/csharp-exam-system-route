@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ExamSystem.Models
 {
-    internal abstract class Question
+    internal abstract class Question : IComparable<Question>, ICloneable
     {
         #region Properties
 
@@ -37,10 +37,27 @@ namespace ExamSystem.Models
 
         #region Methods
 
+        #region Methods
+
         public override string ToString()
         {
             return $"{Header}\n{Body}\nMark: {Mark}";
         }
+
+        public int CompareTo(Question? other)
+        {
+            if (other == null)
+                return 1;
+
+            return Mark.CompareTo(other.Mark);
+        }
+
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
+
+        #endregion
 
         #endregion
     }
