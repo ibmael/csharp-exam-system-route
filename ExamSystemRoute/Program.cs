@@ -1,4 +1,5 @@
 ﻿using ExamSystem.Models;
+using ExamSystem.Exams;
 namespace ExamSystemRoute
 {
     internal class Program
@@ -18,38 +19,63 @@ namespace ExamSystemRoute
 
             #region Test Question Types
 
-            Answer[] mcqAnswers =
+//            Answer[] mcqAnswers =
+//            {
+//    new Answer(1, "C#"),
+//    new Answer(2, "Java"),
+//    new Answer(3, "Python")
+//};
+
+//            MCQQuestion mcqQuestion = new MCQQuestion(
+//                "MCQ Question",
+//                "Which language are we using?",
+//                5,
+//                mcqAnswers,
+//                mcqAnswers[0]
+//            );
+
+//            Console.WriteLine(mcqQuestion);
+//            Answer[] trueFalseAnswers =
+//{
+//    new Answer(1, "True"),
+//    new Answer(2, "False")
+//};
+
+//            TrueFalseQuestion trueFalseQuestion = new TrueFalseQuestion(
+//                "True / False Question",
+//                "C# is an object-oriented programming language.",
+//                5,
+//                trueFalseAnswers,
+//                trueFalseAnswers[0]
+//            );
+
+//            Console.WriteLine();
+//            Console.WriteLine(trueFalseQuestion);
+            #endregion
+
+            #region Test Practical Exam
+
+            Answer[] practicalAnswers =
             {
-    new Answer(1, "C#"),
-    new Answer(2, "Java"),
-    new Answer(3, "Python")
+    new Answer(1, "HTML"),
+    new Answer(2, "C#"),
+    new Answer(3, "CSS")
 };
 
-            MCQQuestion mcqQuestion = new MCQQuestion(
+            MCQQuestion practicalQuestion = new MCQQuestion(
                 "MCQ Question",
-                "Which language are we using?",
+                "Which of the following is a programming language?",
                 5,
-                mcqAnswers,
-                mcqAnswers[0]
+                practicalAnswers,
+                practicalAnswers[1]
             );
 
-            Console.WriteLine(mcqQuestion);
-            Answer[] trueFalseAnswers =
-{
-    new Answer(1, "True"),
-    new Answer(2, "False")
-};
+            PracticalExam practicalExam = new PracticalExam(60, 1);
 
-            TrueFalseQuestion trueFalseQuestion = new TrueFalseQuestion(
-                "True / False Question",
-                "C# is an object-oriented programming language.",
-                5,
-                trueFalseAnswers,
-                trueFalseAnswers[0]
-            );
+            practicalExam.Questions[0] = practicalQuestion;
 
-            Console.WriteLine();
-            Console.WriteLine(trueFalseQuestion);
+            practicalExam.ShowExam();
+
             #endregion
         }
     }
