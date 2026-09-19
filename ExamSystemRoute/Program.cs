@@ -80,43 +80,53 @@ namespace ExamSystemRoute
 
             #region Test Final Exam
 
-            Answer[] finalMcqAnswers =
-            {
-    new Answer(1, "HTML"),
-    new Answer(2, "C#"),
-    new Answer(3, "CSS")
-};
+            //            Answer[] finalMcqAnswers =
+            //            {
+            //    new Answer(1, "HTML"),
+            //    new Answer(2, "C#"),
+            //    new Answer(3, "CSS")
+            //};
 
-            MCQQuestion finalMcqQuestion = new MCQQuestion(
-                "MCQ Question",
-                "Which of the following is a programming language?",
-                5,
-                finalMcqAnswers,
-                finalMcqAnswers[1]
-            );
-
-
-            Answer[] trueFalseAnswers =
-            {
-    new Answer(1, "True"),
-    new Answer(2, "False")
-};
-
-            TrueFalseQuestion finalTrueFalseQuestion = new TrueFalseQuestion(
-                "True / False Question",
-                "C# is an object-oriented programming language.",
-                5,
-                trueFalseAnswers,
-                trueFalseAnswers[0]
-            );
+            //            MCQQuestion finalMcqQuestion = new MCQQuestion(
+            //                "MCQ Question",
+            //                "Which of the following is a programming language?",
+            //                5,
+            //                finalMcqAnswers,
+            //                finalMcqAnswers[1]
+            //            );
 
 
-            FinalExam finalExam = new FinalExam(60, 2);
+            //            Answer[] trueFalseAnswers =
+            //            {
+            //    new Answer(1, "True"),
+            //    new Answer(2, "False")
+            //};
 
-            finalExam.Questions[0] = finalMcqQuestion;
-            finalExam.Questions[1] = finalTrueFalseQuestion;
+            //            TrueFalseQuestion finalTrueFalseQuestion = new TrueFalseQuestion(
+            //                "True / False Question",
+            //                "C# is an object-oriented programming language.",
+            //                5,
+            //                trueFalseAnswers,
+            //                trueFalseAnswers[0]
+            //            );
 
-            finalExam.ShowExam();
+
+            //            FinalExam finalExam = new FinalExam(60, 2);
+
+            //            finalExam.Questions[0] = finalMcqQuestion;
+            //            finalExam.Questions[1] = finalTrueFalseQuestion;
+
+            //            finalExam.ShowExam();
+
+            #endregion
+
+            #region Test Subject And Create Exam
+
+            Subject subject = new Subject(1, "C#");
+
+            subject.CreateExam();
+
+            subject.Exam.ShowExam();
 
             #endregion
         }
